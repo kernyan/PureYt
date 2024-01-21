@@ -1,0 +1,16 @@
+{
+    "banWords": [
+        "!$",
+        "^Meet",
+        "^You won't",
+        "^I tried",
+        "^Can I",
+        "^Surpris",
+        "^How",
+        "^Why",
+        "^Could"
+    ],
+    "banChannels": [
+        "MrBeast"
+    ]
+}
