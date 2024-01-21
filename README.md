@@ -8,26 +8,32 @@ Chromium based YouTube extension that
 In browser, enable developer mode in Extension tab and load this directory.
 
 Customize `banned.json` to filter video titles or channels. E.g.,
-```json
+```yaml
 {
     "banWords": [
         "!$",
         "^Meet",
         "^You won't",
-        "^I tried",
+        "^I ",
         "^Can I",
         "^Surpris",
         "^How",
         "^Why",
-        "^Could"
+        "^Could",
+        "^We "
     ],
     "banChannels": [
         "MrBeast",
         "Jordan Matter"
+    ],
+    "banIds": [
+        "big-yoodle"  # top banner
+    ],
+    "banTags": [
+        "ytd-reel-shelf-renderer",  # Shorts, Trending section
+        "ytd-rich-section-renderer" # Shorts People also watched section
     ]
 }
-
-
 ```
 
 ## After

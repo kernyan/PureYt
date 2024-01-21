@@ -1,14 +1,8 @@
-// remove element by tag
-function removeElementsByTag(tagName){
-    const elements = document.getElementsByTagName(tagName);
-    while(elements.length > 0){
-        elements[0].parentNode.removeChild(elements[0]);
-    }
-}
-
 let bannedRegex = [];
 let bannedChannels = [];
 let bannedIds = [];
+let bannedTags = [];
+
 // load banned regex expressions
 async function loadRegexPatterns(){
     try {
@@ -17,9 +11,20 @@ async function loadRegexPatterns(){
         bannedRegex = data.banWords.map(pattern => new RegExp(pattern));
         bannedChannels = data.banChannels;
         bannedIds = data.banIds;
+        bannedTags = data.banTags;
     } catch (error) {
         console.error('Error fetching banned tokens: ', error);
     }
+}
+
+// remove elements by tag
+function removeBannedTag(){
+    bannedTags.forEach(tagName => {
+        const elements = document.getElementsByTagName(tagName);
+        while(elements.length > 0){
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    });
 }
 
 // remove elements containing banned id
@@ -69,7 +74,7 @@ function removeBannedVideo() {
 // Call the function periodically to handle dynamic content
 loadRegexPatterns().then(() => {
     setInterval(() => {
-        removeElementsByTag('ytd-rich-section-renderer'); // "Shorts", and "Trending" sections' tag
+        removeBannedTag(); // "Shorts", "Trending", "Shorts people also watched" sections
         removeBannedVideo(); // remove videos with title containing banned regex
         removeBannedId(); // remove element in banned id list
     }, 300); // 0.3 s

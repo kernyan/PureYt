@@ -17,5 +17,9 @@
     ],
     "banIds": [
         "big-yoodle"
+    ],
+    "banTags": [
+        "ytd-reel-shelf-renderer",
+        "ytd-rich-section-renderer"
     ]
 }
