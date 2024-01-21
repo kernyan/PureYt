@@ -1,6 +1,6 @@
 # PureYt
 Chromium based YouTube extension that
-- removes "shorts" and "trending" sections
+- removes "Shorts" and "Trending" sections
 - removes videos whose title contains banned regex expression in banned.json
 - removes videos from channels in banned.json
 

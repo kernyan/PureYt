@@ -3,15 +3,19 @@
         "!$",
         "^Meet",
         "^You won't",
-        "^I tried",
+        "^I ",
         "^Can I",
         "^Surpris",
         "^How",
         "^Why",
-        "^Could"
+        "^Could",
+        "^We "
     ],
     "banChannels": [
         "MrBeast",
         "Jordan Matter"
+    ],
+    "banIds": [
+        "big-yoodle"
     ]
 }
