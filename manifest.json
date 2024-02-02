@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Remove Specific Elements",
+  "name": "PureYt",
   "version": "1.0",
-  "description": "Removes elements with a certain class from web pages",
+  "description": "Removes banned elements from YouTube",
   "permissions": ["activeTab", "<all_urls>"],
   "web_accessible_resources": [
       "banned.json"
