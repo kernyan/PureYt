@@ -39,7 +39,8 @@ function removeBannedId() {
 
 // test if contain banned channel
 function removeBannedChannel(element) {
-    const hrefs = Array.from(element.getElementsByTagName('a')).map(a => a.getAttribute('href'));
+    const hrefs = Array.from(element.getElementsByTagName('a'))
+        .map(a => a.getAttribute('href') || '');
     return hrefs.some(href => bannedChannels.some(word => href.includes('/@${word}')));
 }
 
