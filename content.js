@@ -40,8 +40,19 @@ function removeBannedId() {
 // test if contain banned channel
 function removeBannedChannel(element) {
     const hrefs = Array.from(element.getElementsByTagName('a'))
-        .map(a => a.getAttribute('href') || '');
-    return hrefs.some(href => bannedChannels.some(word => href.includes('/@${word}')));
+        .map(a => a.getAttribute('title') || '');
+
+    let isBannedFound = false;
+    return hrefs.some(href => {
+        return bannedChannels.some(word => {
+            if (href.includes(word)) {
+                console.log(`Removed ${word}`);
+                return true;
+            }
+            return false;
+        });
+    });
+    return isBannedFound;
 }
 
 // remove elements containing banned title or channel
