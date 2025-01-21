@@ -6,7 +6,7 @@ let bannedTags = [];
 // load banned regex expressions
 async function loadRegexPatterns(){
     try {
-        const response = await fetch(chrome.extension.getURL('banned.json'));
+        const response = await fetch(chrome.runtime.getURL('banned.json'));
         const data = await response.json();
         bannedRegex = data.banWords.map(pattern => new RegExp(pattern));
         bannedChannels = data.banChannels;
